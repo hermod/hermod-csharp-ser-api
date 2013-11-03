@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{E34012FB-59DB-488C-B908-1E6E2834FE62}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>library</OutputType>
+    <RootNamespace>Com.Github.Hermod.Ser</RootNamespace>
+    <AssemblyName>hermod-csharp-ser-api</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <SignAssembly>False</SignAssembly>
+    <DelaySign>False</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\main\csharp\Com\Github\Hermod\Ser\IBytesMsgSerializer.cs" />
+    <Compile Include="src\main\csharp\Com\Github\Hermod\Ser\IBytesSerializable.cs" />
+    <Compile Include="src\main\csharp\Com\Github\Hermod\Ser\IMsg.cs" />
+    <Compile Include="src\main\csharp\Com\Github\Hermod\Ser\IMsgSerializer.cs" />
+    <Compile Include="src\main\csharp\Com\Github\Hermod\Ser\IMsgIdentifiable.cs" />
+    <Compile Include="src\main\csharp\Com\Github\Hermod\Ser\ISerializable.cs" />
+    <Compile Include="src\main\csharp\Com\Github\Hermod\Ser\Null.cs" />
+    <Compile Include="src\main\csharp\Com\Github\Hermod\Ser\Type.cs" />
+    <Compile Include="src\main\csharp\Com\Github\Hermod\Ser\Types.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src" />
+    <Folder Include="src\main" />
+    <Folder Include="src\main\csharp" />
+    <Folder Include="src\main\csharp\Com" />
+    <Folder Include="src\main\csharp\Com\Github" />
+    <Folder Include="src\main\csharp\Com\Github\Hermod" />
+    <Folder Include="src\main\csharp\Com\Github\Hermod\Ser" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pom.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

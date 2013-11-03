@@ -1,0 +1,57 @@
+﻿<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.github.hermod.ser</groupId>
+  <artifactId>hermod-csharp-ser-api</artifactId>
+   <version>0.0.3-SNAPSHOT</version>
+  <name>hermod-csharp-ser-api</name>
+  <packaging>sln</packaging>
+
+  <properties>
+    <!-- 
+       NOTE : the versions and parameters may be defined as properties. 
+       Prefer this option to the plugin configuration as it may be accessible to several plugins
+    -->
+    
+    <!-- Name of the solution file, located in the same directory as the pom.xml -->
+    <visual.studio.solution>hermod-csharp-ser-api.sln</visual.studio.solution>
+    <!-- Name pattern to recognize the test assemblies, so that unit tests are only launched on those,
+    and so that those are excluded from code coverage. Several patterns may be specified using a ";" as delimiter -->
+    <visual.test.project.pattern>*.Tests</visual.test.project.pattern>
+    
+    <!-- Version of the .Net tools, which may be 2.0, 3.5 or 4.0 only
+    Default value is 3.5 -->
+    <dotnet.tool.version>4.0</dotnet.tool.version>
+    
+    <!-- Version of silverlight in case the analysed solution contains silverlight project 
+    Possible values are 3 and 4
+    Default value is 4 -->
+    <silverlight.version>4</silverlight.version>
+    
+  </properties>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.sonar-plugins.dotnet</groupId>
+        <artifactId>maven-dotnet-plugin</artifactId>
+      	<version>1.1</version>
+        <!-- Plugin specific configuration : commented out here as it is redundant with 
+             the properties defined above -->
+        <!--
+        <configuration>
+          <testProjectPattern>*.Tests</testProjectPattern>
+          <solutionName>Example.sln</solutionName>
+          <toolVersion>3.5</toolVersion>
+          <buildConfigurations>
+            <buildConfiguration>Debug</buildConfiguration>
+            <buildConfiguration>Release</buildConfiguration>
+          </buildConfigurations>
+        </configuration>
+        -->
+        
+        <!-- Required to enforce a .Net specific maven lifecycle where compile, test and clean are overridden --> 
+        <extensions>true</extensions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
