@@ -19,203 +19,217 @@ namespace Com.Github.Hermod.Ser
 
     bool IsBytesSerializable();
 
-    int[] GetKeysArray();
+    //int[] GetKeysArray();
+    int[] KeysArray
+	{
+	    get;
+	}
+        	
+    //int GetKeyMax();
+    int KeyMax
+	{
+	    get;
+	}
+       
+    //int GetKeysLength();
+    int KeysLength
+	{
+	    get;
+	}
 
-    int GetKeyMax();
+    Type GetType(uint i);
 
-    int GetKeysLength();
+    byte GetTypeAsByte(uint i);
 
-    Type GetType(int i);
+    bool IsArray(uint i);
 
-    byte GetTypeAsByte(int i);
+    int GetArrayLength(uint i);
 
-    bool IsArray(int i);
+    bool Contains(uint i);
 
-    int GetArrayLength(int i);
+    Object Get(uint i);
 
-    bool Contains(int i);
+    T Get<T>(uint i);
 
-    Object Get(int i);
+    bool GetAsBool(uint i);
 
-    T Get<T>(int i);
+    bool? GetAsNullableBool(uint i);
 
-    bool GetAsBool(int i);
+    byte GetAsByte(uint i);
 
-    bool? GetAsNullableBool(int i);
+    byte GetAsNullableByte(uint i);
 
-    byte GetAsByte(int i);
+    short GetAsShort(uint i);
 
-    byte? GetAsNullableByte(int i);
+    short? GetAsNullableShort(uint i);
 
-    short GetAsShort(int i);
+    int GetAsInt(uint i);
 
-    short? GetAsNullableShort(int i);
+    int? GetAsNullableInt(uint i);
 
-    int GetAsInt(int i);
+    long GetAsLong(uint i);
 
-    int? GetAsNullableInt(int i);
+    long? GetAsNullableLong(uint i);
 
-    long GetAsLong(int i);
+    float GetAsFloat(uint i);
 
-    long? GetAsNullableLong(int i);
+    float? GetAsNullableFloat(uint i);
 
-    float GetAsFloat(int i);
+    double GetAsDouble(uint i);
 
-    float? GetAsNullableFloat(int i);
+    double? GetAsNullableDouble(uint i);
 
-    double GetAsDouble(int i);
+    String GetAsString(uint i);
 
-    double? GetAsNullableDouble(int i);
+    IMsg GetAsIMsg(uint i);
 
-    string GetAsString(int i);
+    void GetAsIMsg(uint i, IMsg m);
 
-    IMsg GetAsIMsg(int i);
+    bool[] GetAsBools(uint i);
 
-    void GetAsIMsg(int i, IMsg m);
+    bool?[] GetAsNullableBools(uint i);
 
-    bool[] GetAsBools(int i);
+    byte[] GetAsBytes(uint i);
 
-    bool?[] GetAsNullableBools(int i);
+    byte?[] GetAsNullableBytes(uint i);
 
-    byte[] GetAsBytes(int i);
+    short[] GetAsShorts(uint i);
 
-    byte?[] GetAsNullableBytes(int i);
+    short?[] GetAsNullableShorts(uint i);
 
-    short[] GetAsShorts(int i);
+    int[] GetAsInts(uint i);
 
-    short?[] GetAsNullableShorts(int i);
+    int?[] GetAsNullableInts(uint i);
 
-    int[] GetAsInts(int i);
+    long[] GetAsLongs(uint i);
 
-    int?[] GetAsNullableInts(int i);
+    long?[] GetAsNullableLongs(uint i);
 
-    long[] GetAsLongs(int i);
+    float[] GetAsFloats(uint i);
 
-    long?[] GetAsNullableLongs(int i);
+    float?[] GetAsNullableFloats(uint i);
 
-    float[] GetAsFloats(int i);
+    double[] GetAsDoubles(uint i);
 
-    float?[] GetAsNullableFloats(int i);
+    double?[] GetAsNullableDoubles(uint i);
 
-    double[] GetAsDoubles(int i);
+    String[] GetAsStrings(uint i);
 
-    double?[] GetAsNullableDoubles(int i);
+    IMsg[] GetAsIMsgs(uint i);
 
-    string[] GetAsStrings(int i);
+    void GetAsIMsgs(uint i, params IMsg[] marr);
 
-    IMsg[] GetAsIMsgs(int i);
+    Object[] GetAsObjects(uint i);
 
-    void GetAsIMsgs(int i, params IMsg[] marr);
-
-    object[] GetAsObjects(int i);
-
-    void GetAsObjects(int i, params object[] objarr);
+    void GetAsObjects(uint i, params object[] objarr);
 
     IMsg GetAllAsIMsg();
 
-    object[] GetAllAsObjects();
+    Object[] GetAllAsObjects();
 
     void GetAllAsObjects(params object[] objarr);
+    
+    void Set<T>(uint i, T t);
 
-    void Set(int i, Null n);
+    void Set(uint i, Null n);
 
-    void Set(int i, object obj);
+    void Set(uint i, Object obj);
 
-    void Set(int i, bool b);
+    void Set(uint i, bool b);
 
-    void Set(int i, bool? b);
+    void Set(uint i, bool? b);
 
-    void Set(int i, Boolean b1, bool b2);
+    void Set(int i, bool? b1, bool b2);
 
-    void Set(int i, byte b);
+    void Set(uint i, byte b);
 
-    void Set(int i, byte? b);
+    void Set(uint i, byte? b);
 
-    void Set(int i, byte? b1, bool b2);
+    void Set(uint i, byte? b1, bool b2);
 
-    void Set(int i, short s);
+    void Set(uint i, short s);
 
-    void Set(int i, short s, bool b);
+    void Set(uint i, short s, bool b);
 
-    void Set(int i, short? s);
+    void Set(uint i, short? s);
 
-    void Set(int i, short? s, bool b);
+    void Set(uint i, short? s, bool b);
 
-    void Set(int i1, int i2);
+    void Set(uint i1, int i2);
 
-    void Set(int i1, int i2, bool b);
+    void Set(uint i1, int i2, bool b);
 
-    void Set(int i1, int? i2);
+    void Set(uint i1, int? i2);
 
-    void Set(int i1, int? i2, bool b);
+    void Set(uint i1, int? i2, bool b);
 
-    void Set(int i, long l);
+    void Set(uint i, long l);
 
-    void Set(int i, long l, bool b);
+    void Set(uint i, long l, bool b);
 
-    void Set(int i, long? l);
+    void Set(uint i, long? l);
 
-    void Set(int i, long? l, bool b);
+    void Set(uint i, long? l, bool b);
 
-    void Set(int i, float f);
+    void Set(uint i, float f);
 
-    void Set(int i, float? f);
+    void Set(uint i, float? f);
 
-    void Set(int i, float? f, bool b);
+    void Set(uint i, float? f, bool b);
 
-    void Set(int i, double d);
+    void Set(uint i, double d);
 
-    void Set(int i, double d, bool b);
+    void Set(uint i, double d, bool b);
 
-    void Set(int i, double? d);
+    void Set(uint i, double? d);
 
-    void Set(int i, double? d, bool b);
+    void Set(uint i, double? d, bool b);
 
-    void Set(int i1, double d, int i2);
+    void Set(uint i1, double d, int i2);
 
-    void Set(int i1, double? d, int i2);
+    void Set(uint i1, double? d, int i2);
 
-    void Set(int i1, double? d, int i2, bool b);
+    void Set(uint i1, double? d, int i2, bool b);
 
-    void Set(int i, string str);
+    void Set(uint i, String str);
 
-    void Set(int i, string str, bool b);
+    void Set(uint i, String str, bool b);
 
-    void Set(int i, IMsg m);
+    void Set(uint i, IMsg m);
 
-    void Set(int i, params bool[] barr);
+    void Set(uint i, params bool[] barr);
 
-    void Set(int i, params bool?[] barr);
+    void Set(uint i, params bool?[] barr);
 
-    void Set(int i, params byte[] barr);
+    void Set(uint i, params byte[] barr);
 
-    void Set(int i, params byte?[] barr);
+    void Set(uint i, params byte?[] barr);
 
-    void Set(int i, params short[] sarr);
+    void Set(uint i, params short[] sarr);
 
-    void Set(int i, params short?[] sarr);
+    void Set(uint i, params short?[] sarr);
 
-    void Set(int i, params int[] iarr);
+    void Set(uint i, params int[] iarr);
 
-    void Set(int i, params int?[] iarr);
+    void Set(uint i, params int?[] iarr);
 
-    void Set(int i, params long[] larr);
+    void Set(uint i, params long[] larr);
 
-    void Set(int i, params long?[] larr);
+    void Set(uint i, params long?[] larr);
 
-    void Set(int i, params float[] farr);
+    void Set(uint i, params float[] farr);
 
-    void Set(int i, params float?[] farr);
+    void Set(uint i, params float?[] farr);
 
-    void Set(int i, params double[] darr);
+    void Set(uint i, params double[] darr);
 
-    void Set(int i, params double?[] darr);
+    void Set(uint i, params double?[] darr);
 
-    void Set(int i, params string[] strarr);
+    void Set(uint i, params String[] strarr);
 
-    void Set(int i, string[] strarr, bool b);
+    void Set(uint i, String[] strarr, bool b);
 
-    void Set(int i, params IMsg[] marr);
+    void Set(uint i, params IMsg[] marr);
 
     void SetAll(IMsg m);
 
@@ -233,6 +247,5 @@ namespace Com.Github.Hermod.Ser
        get;
        set;
     }
-       
 	}
 }

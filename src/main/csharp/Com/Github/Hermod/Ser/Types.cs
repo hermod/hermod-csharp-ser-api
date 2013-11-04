@@ -20,11 +20,12 @@ namespace Com.Github.Hermod.Ser
     	public const byte INTEGER_TYPE = (byte) 64;
     	public const byte DECIMAL_TYPE = (byte) 96;
     	public const byte STRING_UTF_8_TYPE = (byte) 128;
-    	public const string UTF_8_CHARSET_NAME = "UTF-8";
     	public const byte MSG_TYPE = (byte) 160;
     	public const byte ARRAY_FIXED_VALUE_TYPE = (byte) 192;
     	public const byte ARRAY_VARIABLE_VALUE_TYPE = (byte) 224;
     	public const byte TYPE_MASK = (byte) 224;
+    	
+    	public const string UTF_8_CHARSET_NAME = "UTF-8";
     	
 	}
 }
