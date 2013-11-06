@@ -244,7 +244,9 @@ namespace Com.Github.Hermod.Ser
     //TODO is it correct
     Object this[int index]
     {
+    	//TODO
        get;
+       //set{Set(index, value)}
        set;
     }
 	}
